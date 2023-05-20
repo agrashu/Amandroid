@@ -1,0 +1,17 @@
+record `de.ecspride.MainActivity$B` @kind class @AccessFlag  extends `de.ecspride.MainActivity$MyInterface` @kind interface {
+  `de.ecspride.MainActivity` `de.ecspride.MainActivity$B.this$0` @AccessFlag FINAL_SYNTHETIC;
+}
+procedure `void` `<init>`(`de.ecspride.MainActivity$B` v0 @kind this, `de.ecspride.MainActivity` v1 @kind object) @signature `Lde/ecspride/MainActivity$B;.<init>:(Lde/ecspride/MainActivity;)V` @AccessFlag CONSTRUCTOR {
+    temp;
+
+  #L092bcc.  v0.`de.ecspride.MainActivity$B.this$0` @type ^`de.ecspride.MainActivity` := v1 @kind object;
+  #L092bd0.  call `<init>`(v0) @signature `Ljava/lang/Object;.<init>:()V` @kind direct;
+  #L092bd6.  return @kind void;
+}
+procedure `java.lang.String` `getString`(`de.ecspride.MainActivity$B` v1 @kind this) @signature `Lde/ecspride/MainActivity$B;.getString:()Ljava/lang/String;` @AccessFlag PUBLIC {
+    temp;
+    v0;
+
+  #L092be8.  v0:= "constant" @kind object;
+  #L092bec.  return v0 @kind object;
+}

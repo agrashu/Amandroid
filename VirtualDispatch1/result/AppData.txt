@@ -1,0 +1,25 @@
+Application Name: VirtualDispatch1.apk
+Uses Permissions: android.permission.READ_PHONE_STATE, android.permission.WRITE_EXTERNAL_STORAGE
+
+Component de.ecspride.VirtualDispatch1
+  Component type: activity
+  Exported: true
+  Dynamic Registered: false
+  Required Permission: 
+  IntentFilters:
+    IntentFilter:(Actions:["android.intent.action.MAIN"],Categories:["android.intent.category.LAUNCHER"])
+
+  Inter-component communication (ICC) Result:
+
+
+
+Taint analysis result:
+  Sources found:
+  Sinks found:
+  Discovered taint paths are listed below:
+    TaintPath:
+      Source: <Descriptors: api_source: #L0270c4.  call temp:= `getDeviceId`(v0) @signature `Landroid/telephony/TelephonyManager;.getDeviceId:()Ljava/lang/String;` @kind virtual;>
+      Sink: <Descriptors: api_sink: #L026f5c.  call temp:= `i`(v0, v1) @signature `Landroid/util/Log;.i:(Ljava/lang/String;Ljava/lang/String;)I` @kind static;>
+      Types: 
+      The path consists of the following edges ("->"). The nodes have the context information (p1 to pn means which parameter). The source is at the top :
+        List(#L0270c4.  call temp:= `getDeviceId`(v0) @signature `Landroid/telephony/TelephonyManager;.getDeviceId:()Ljava/lang/String;` @kind virtual;, Exit@Lde/ecspride/VirtualDispatch1;.onCreate:(Landroid/os/Bundle;)V param: 0, #L0270c4.  call temp:= `getDeviceId`(v0) @signature `Landroid/telephony/TelephonyManager;.getDeviceId:()Ljava/lang/String;` @kind virtual;, Exit@Lde/ecspride/VirtualDispatch1;.onCreate:(Landroid/os/Bundle;)V param: 0, #L9.  call `onCreate`(r1, r3) @signature `Lde/ecspride/VirtualDispatch1;.onCreate:(Landroid/os/Bundle;)V` @kind virtual;, #L16.  call `clickButton`(r1, r4) @signature `Lde/ecspride/VirtualDispatch1;.clickButton:(Landroid/view/View;)V` @kind virtual;, Entry@Lde/ecspride/VirtualDispatch1;.clickButton:(Landroid/view/View;)V param: 0, #L02707c.  call `logData`(v0) @signature `Lde/ecspride/NoDataLeak;.logData:()V` @kind virtual;, Entry@Lde/ecspride/NoDataLeak;.logData:()V param: 0, #L026f5c.  call temp:= `i`(v0, v1) @signature `Landroid/util/Log;.i:(Ljava/lang/String;Ljava/lang/String;)I` @kind static;)

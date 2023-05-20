@@ -1,0 +1,25 @@
+record `de.ecspride.MainActivity$A` @kind class @AccessFlag  extends `de.ecspride.MainActivity$MyInterface` @kind interface {
+  `de.ecspride.MainActivity` `de.ecspride.MainActivity$A.this$0` @AccessFlag FINAL_SYNTHETIC;
+}
+procedure `void` `<init>`(`de.ecspride.MainActivity$A` v0 @kind this, `de.ecspride.MainActivity` v1 @kind object) @signature `Lde/ecspride/MainActivity$A;.<init>:(Lde/ecspride/MainActivity;)V` @AccessFlag CONSTRUCTOR {
+    temp;
+
+  #L092b80.  v0.`de.ecspride.MainActivity$A.this$0` @type ^`de.ecspride.MainActivity` := v1 @kind object;
+  #L092b84.  call `<init>`(v0) @signature `Ljava/lang/Object;.<init>:()V` @kind direct;
+  #L092b8a.  return @kind void;
+}
+procedure `java.lang.String` `getString`(`de.ecspride.MainActivity$A` v3 @kind this) @signature `Lde/ecspride/MainActivity$A;.getString:()Ljava/lang/String;` @AccessFlag PUBLIC {
+    temp;
+    v0;
+    v1;
+    v2;
+
+  #L092b9c.  v1:= v3.`de.ecspride.MainActivity$A.this$0` @type ^`de.ecspride.MainActivity` @kind object;
+  #L092ba0.  v2:= "phone" @kind object;
+  #L092ba4.  call temp:= `getSystemService`(v1, v2) @signature `Lde/ecspride/MainActivity;.getSystemService:(Ljava/lang/String;)Ljava/lang/Object;` @kind virtual;
+  #L092baa.  v0:= temp @kind object;
+  #L092bac.  v0:= (`android.telephony.TelephonyManager`) v0 @kind object;
+  #L092bb0.  call temp:= `getDeviceId`(v0) @signature `Landroid/telephony/TelephonyManager;.getDeviceId:()Ljava/lang/String;` @kind virtual;
+  #L092bb6.  v1:= temp @kind object;
+  #L092bb8.  return v1 @kind object;
+}

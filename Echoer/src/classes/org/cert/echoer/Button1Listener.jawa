@@ -1,0 +1,41 @@
+record `org.cert.echoer.Button1Listener` @kind class @AccessFlag PUBLIC extends `android.view.View$OnClickListener` @kind interface {
+  `org.cert.echoer.MainActivity` `org.cert.echoer.Button1Listener.act` @AccessFlag PRIVATE_FINAL;
+}
+procedure `void` `<init>`(`org.cert.echoer.Button1Listener` v0 @kind this, `org.cert.echoer.MainActivity` v1 @kind object @name `parentActivity`) @signature `Lorg/cert/echoer/Button1Listener;.<init>:(Lorg/cert/echoer/MainActivity;)V` @AccessFlag PUBLIC_CONSTRUCTOR {
+    temp;
+
+  #L03f090.  call `<init>`(v0) @signature `Ljava/lang/Object;.<init>:()V` @kind direct;
+  #L03f096.  v0.`org.cert.echoer.Button1Listener.act` @type ^`org.cert.echoer.MainActivity` := v1 @kind object;
+  #L03f09a.  return @kind void;
+}
+procedure `void` `onClick`(`org.cert.echoer.Button1Listener` v4 @kind this, `android.view.View` v5 @kind object @name `arg0`) @signature `Lorg/cert/echoer/Button1Listener;.onClick:(Landroid/view/View;)V` @AccessFlag PUBLIC {
+    temp;
+    v0;
+    v1;
+    v2;
+    v3;
+
+  #L03f0ac.  v1:= "In Echoer" @kind object;
+  #L03f0b0.  v2:= "Echoing data back to caller using setResult()" @kind object;
+  #L03f0b4.  call temp:= `i`(v1, v2) @signature `Landroid/util/Log;.i:(Ljava/lang/String;Ljava/lang/String;)I` @kind static;
+  #L03f0ba.  v1:= v4.`org.cert.echoer.Button1Listener.act` @type ^`org.cert.echoer.MainActivity` @kind object;
+  #L03f0be.  v2:= 0I;
+  #L03f0c0.  v3:= v4.`org.cert.echoer.Button1Listener.act` @type ^`org.cert.echoer.MainActivity` @kind object;
+  #L03f0c4.  v3:= v3.`org.cert.echoer.MainActivity.i` @type ^`android.content.Intent` @kind object;
+  #L03f0c8.  call `setResult`(v1, v2, v3) @signature `Lorg/cert/echoer/MainActivity;.setResult:(ILandroid/content/Intent;)V` @kind virtual;
+  #L03f0ce.  v1:= v4.`org.cert.echoer.Button1Listener.act` @type ^`org.cert.echoer.MainActivity` @kind object;
+  #L03f0d2.  call `finish`(v1) @signature `Lorg/cert/echoer/MainActivity;.finish:()V` @kind virtual;
+  #L03f0d8.  return @kind void;
+  #L03f0da.  v0:= Exception @type ^`java.lang.Exception` @kind object;
+  #L03f0dc.  call `printStackTrace`(v0) @signature `Ljava/lang/Exception;.printStackTrace:()V` @kind virtual;
+  #L03f0e2.  v1:= v4.`org.cert.echoer.Button1Listener.act` @type ^`org.cert.echoer.MainActivity` @kind object;
+  #L03f0e6.  call `finish`(v1) @signature `Lorg/cert/echoer/MainActivity;.finish:()V` @kind virtual;
+  #L03f0ec.  goto L03f0d8;
+  #L03f0ee.  v1:= Exception @type ^`java.lang.Throwable` @kind object;
+  #L03f0f0.  v2:= v4.`org.cert.echoer.Button1Listener.act` @type ^`org.cert.echoer.MainActivity` @kind object;
+  #L03f0f4.  call `finish`(v2) @signature `Lorg/cert/echoer/MainActivity;.finish:()V` @kind virtual;
+  #L03f0fa.  throw v1;
+  catch `java.lang.Exception` @[L03f0ac..L03f0ce] goto L03f0da;
+  catch `java.lang.Throwable` @[L03f0ac..L03f0ce] goto L03f0ee;
+  catch `java.lang.Throwable` @[L03f0dc..L03f0e2] goto L03f0ee;
+}

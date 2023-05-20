@@ -1,0 +1,102 @@
+record `de.ecspride.MainActivity` @kind class @AccessFlag PUBLIC extends `android.support.v7.app.ActionBarActivity` @kind class {
+}
+procedure `void` `<init>`(`de.ecspride.MainActivity` v0 @kind this) @signature `Lde/ecspride/MainActivity;.<init>:()V` @AccessFlag PUBLIC_CONSTRUCTOR {
+    temp;
+
+  #L097694.  call `<init>`(v0) @signature `Landroid/support/v7/app/ActionBarActivity;.<init>:()V` @kind direct;
+  #L09769a.  return @kind void;
+}
+procedure `de.ecspride.MainActivity$MyInterface` `createInterfaceImplementation`(`de.ecspride.MainActivity` v1 @kind this) @signature `Lde/ecspride/MainActivity;.createInterfaceImplementation:()Lde/ecspride/MainActivity$MyInterface;` @AccessFlag PRIVATE {
+    temp;
+    v0;
+
+  #L0976ac.  v0:= new `de.ecspride.MainActivity$B`;
+  #L0976b0.  call `<init>`(v0, v1) @signature `Lde/ecspride/MainActivity$B;.<init>:(Lde/ecspride/MainActivity;)V` @kind direct;
+  #L0976b6.  return v0 @kind object;
+}
+procedure `de.ecspride.MainActivity$MyInterface` `createOtherImplementation`(`de.ecspride.MainActivity` v1 @kind this) @signature `Lde/ecspride/MainActivity;.createOtherImplementation:()Lde/ecspride/MainActivity$MyInterface;` @AccessFlag PRIVATE {
+    temp;
+    v0;
+
+  #L0976c8.  v0:= new `de.ecspride.MainActivity$A`;
+  #L0976cc.  call `<init>`(v0, v1) @signature `Lde/ecspride/MainActivity$A;.<init>:(Lde/ecspride/MainActivity;)V` @kind direct;
+  #L0976d2.  return v0 @kind object;
+}
+procedure `void` `factoryTest`(`de.ecspride.MainActivity` v8 @kind this) @signature `Lde/ecspride/MainActivity;.factoryTest:()V` @AccessFlag PRIVATE {
+    temp;
+    v0;
+    v1;
+    v2;
+    v3;
+    v4;
+    v5;
+    v6;
+    v7;
+
+  #L0976e4.  v2:= 0I;
+  #L0976e6.  call temp:= `createInterfaceImplementation`(v8) @signature `Lde/ecspride/MainActivity;.createInterfaceImplementation:()Lde/ecspride/MainActivity$MyInterface;` @kind direct;
+  #L0976ec.  v7:= temp @kind object;
+  #L0976ee.  call temp:= `getString`(v7) @signature `Lde/ecspride/MainActivity$MyInterface;.getString:()Ljava/lang/String;` @kind interface;
+  #L0976f4.  v3:= temp @kind object;
+  #L0976f6.  call temp:= `getDefault`() @signature `Landroid/telephony/SmsManager;.getDefault:()Landroid/telephony/SmsManager;` @kind static;
+  #L0976fc.  v0:= temp @kind object;
+  #L0976fe.  v1:= "+49 1234" @kind object;
+  #L097702.  v4:= v2 @kind object;
+  #L097704.  v5:= v2 @kind object;
+  #L097706.  call `sendTextMessage`(v0, v1, v2, v3, v4, v5) @signature `Landroid/telephony/SmsManager;.sendTextMessage:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V` @kind virtual;
+  #L09770c.  call temp:= `createOtherImplementation`(v8) @signature `Lde/ecspride/MainActivity;.createOtherImplementation:()Lde/ecspride/MainActivity$MyInterface;` @kind direct;
+  #L097712.  v6:= temp @kind object;
+  #L097714.  v1:= `@@java.lang.System.out` @type ^`java.io.PrintStream` @kind object;
+  #L097718.  call `println`(v1, v6) @signature `Ljava/io/PrintStream;.println:(Ljava/lang/Object;)V` @kind virtual;
+  #L09771e.  return @kind void;
+}
+procedure `void` `onCreate`(`de.ecspride.MainActivity` v3 @kind this, `android.os.Bundle` v4 @kind object @name `savedInstanceState`) @signature `Lde/ecspride/MainActivity;.onCreate:(Landroid/os/Bundle;)V` @AccessFlag PROTECTED {
+    temp;
+    v0;
+    v1;
+    v2;
+
+  #L097730.  call `onCreate`(v3, v4) @signature `Landroid/support/v7/app/ActionBarActivity;.onCreate:(Landroid/os/Bundle;)V` @kind super;
+  #L097736.  v0:= 2130903064I;
+  #L09773c.  call `setContentView`(v3, v0) @signature `Lde/ecspride/MainActivity;.setContentView:(I)V` @kind virtual;
+  #L097742.  if v4 != 0 then goto L097774;
+  #L097746.  call temp:= `getSupportFragmentManager`(v3) @signature `Lde/ecspride/MainActivity;.getSupportFragmentManager:()Landroid/support/v4/app/FragmentManager;` @kind virtual;
+  #L09774c.  v0:= temp @kind object;
+  #L09774e.  call temp:= `beginTransaction`(v0) @signature `Landroid/support/v4/app/FragmentManager;.beginTransaction:()Landroid/support/v4/app/FragmentTransaction;` @kind virtual;
+  #L097754.  v0:= temp @kind object;
+  #L097756.  v1:= 2131034172I;
+  #L09775c.  v2:= new `de.ecspride.MainActivity$PlaceholderFragment`;
+  #L097760.  call `<init>`(v2) @signature `Lde/ecspride/MainActivity$PlaceholderFragment;.<init>:()V` @kind direct;
+  #L097766.  call temp:= `add`(v0, v1, v2) @signature `Landroid/support/v4/app/FragmentTransaction;.add:(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;` @kind virtual;
+  #L09776c.  v0:= temp @kind object;
+  #L09776e.  call temp:= `commit`(v0) @signature `Landroid/support/v4/app/FragmentTransaction;.commit:()I` @kind virtual;
+  #L097774.  call `factoryTest`(v3) @signature `Lde/ecspride/MainActivity;.factoryTest:()V` @kind direct;
+  #L09777a.  return @kind void;
+}
+procedure `boolean` `onCreateOptionsMenu`(`de.ecspride.MainActivity` v2 @kind this, `android.view.Menu` v3 @kind object @name `menu`) @signature `Lde/ecspride/MainActivity;.onCreateOptionsMenu:(Landroid/view/Menu;)Z` @AccessFlag PUBLIC {
+    temp;
+    v0;
+    v1;
+
+  #L09778c.  call temp:= `getMenuInflater`(v2) @signature `Lde/ecspride/MainActivity;.getMenuInflater:()Landroid/view/MenuInflater;` @kind virtual;
+  #L097792.  v0:= temp @kind object;
+  #L097794.  v1:= 2131492864I;
+  #L097798.  call `inflate`(v0, v1, v3) @signature `Landroid/view/MenuInflater;.inflate:(ILandroid/view/Menu;)V` @kind virtual;
+  #L09779e.  v0:= 1I;
+  #L0977a0.  return v0;
+}
+procedure `boolean` `onOptionsItemSelected`(`de.ecspride.MainActivity` v2 @kind this, `android.view.MenuItem` v3 @kind object @name `item`) @signature `Lde/ecspride/MainActivity;.onOptionsItemSelected:(Landroid/view/MenuItem;)Z` @AccessFlag PUBLIC {
+    temp;
+    v0;
+    v1;
+
+  #L0977b4.  call temp:= `getItemId`(v3) @signature `Landroid/view/MenuItem;.getItemId:()I` @kind interface;
+  #L0977ba.  v0:= temp;
+  #L0977bc.  v1:= 2131034173I;
+  #L0977c2.  if v0 != v1 then goto L0977ca;
+  #L0977c6.  v1:= 1I;
+  #L0977c8.  return v1;
+  #L0977ca.  call temp:= `onOptionsItemSelected`(v2, v3) @signature `Landroid/support/v7/app/ActionBarActivity;.onOptionsItemSelected:(Landroid/view/MenuItem;)Z` @kind super;
+  #L0977d0.  v1:= temp;
+  #L0977d2.  goto L0977c8;
+}

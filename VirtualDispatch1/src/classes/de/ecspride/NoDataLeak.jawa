@@ -1,0 +1,27 @@
+record `de.ecspride.NoDataLeak` @kind class @AccessFlag PUBLIC {
+  `java.lang.String` `de.ecspride.NoDataLeak.data` @AccessFlag PRIVATE_FINAL;
+}
+procedure `void` `<init>`(`de.ecspride.NoDataLeak` v0 @kind this, `java.lang.String` v1 @kind object @name `data`) @signature `Lde/ecspride/NoDataLeak;.<init>:(Ljava/lang/String;)V` @AccessFlag PUBLIC_CONSTRUCTOR {
+    temp;
+
+  #L026f20.  call `<init>`(v0) @signature `Ljava/lang/Object;.<init>:()V` @kind direct;
+  #L026f26.  v0.`de.ecspride.NoDataLeak.data` @type ^`java.lang.String` := v1 @kind object;
+  #L026f2a.  return @kind void;
+}
+procedure `java.lang.String` `getData`(`de.ecspride.NoDataLeak` v1 @kind this) @signature `Lde/ecspride/NoDataLeak;.getData:()Ljava/lang/String;` @AccessFlag PUBLIC {
+    temp;
+    v0;
+
+  #L026f3c.  v0:= v1.`de.ecspride.NoDataLeak.data` @type ^`java.lang.String` @kind object;
+  #L026f40.  return v0 @kind object;
+}
+procedure `void` `logData`(`de.ecspride.NoDataLeak` v2 @kind this) @signature `Lde/ecspride/NoDataLeak;.logData:()V` @AccessFlag PUBLIC {
+    temp;
+    v0;
+    v1;
+
+  #L026f54.  v0:= "LOG" @kind object;
+  #L026f58.  v1:= v2.`de.ecspride.NoDataLeak.data` @type ^`java.lang.String` @kind object;
+  #L026f5c.  call temp:= `i`(v0, v1) @signature `Landroid/util/Log;.i:(Ljava/lang/String;Ljava/lang/String;)I` @kind static;
+  #L026f62.  return @kind void;
+}

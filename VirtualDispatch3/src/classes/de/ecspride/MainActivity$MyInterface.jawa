@@ -1,0 +1,6 @@
+record `de.ecspride.MainActivity$MyInterface` @kind interface @AccessFlag ABSTRACT_INTERFACE {
+}
+procedure `java.lang.String` `getString`() @signature `Lde/ecspride/MainActivity$MyInterface;.getString:()Ljava/lang/String;` @AccessFlag PUBLIC_ABSTRACT {
+
+  # return;
+}

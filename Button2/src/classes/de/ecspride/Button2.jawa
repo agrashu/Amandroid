@@ -1,0 +1,76 @@
+record `de.ecspride.Button2` @kind class @AccessFlag PUBLIC extends `android.app.Activity` @kind class {
+  `java.lang.String` `de.ecspride.Button2.imei` @AccessFlag PRIVATE;
+}
+procedure `void` `<init>`(`de.ecspride.Button2` v1 @kind this) @signature `Lde/ecspride/Button2;.<init>:()V` @AccessFlag PUBLIC_CONSTRUCTOR {
+    temp;
+    v0;
+
+  #L027190.  call `<init>`(v1) @signature `Landroid/app/Activity;.<init>:()V` @kind direct;
+  #L027196.  v0:= 0I;
+  #L027198.  v1.`de.ecspride.Button2.imei` @type ^`java.lang.String` := v0 @kind object;
+  #L02719c.  return @kind void;
+}
+procedure `java.lang.String` `access$0`(`de.ecspride.Button2` v1 @kind object) @signature `Lde/ecspride/Button2;.access$0:(Lde/ecspride/Button2;)Ljava/lang/String;` @AccessFlag STATIC_SYNTHETIC {
+    temp;
+    v0;
+
+  #L0271b0.  v0:= v1.`de.ecspride.Button2.imei` @type ^`java.lang.String` @kind object;
+  #L0271b4.  return v0 @kind object;
+}
+procedure `void` `access$1`(`de.ecspride.Button2` v0 @kind object, `java.lang.String` v1 @kind object) @signature `Lde/ecspride/Button2;.access$1:(Lde/ecspride/Button2;Ljava/lang/String;)V` @AccessFlag STATIC_SYNTHETIC {
+    temp;
+
+  #L0271c8.  v0.`de.ecspride.Button2.imei` @type ^`java.lang.String` := v1 @kind object;
+  #L0271cc.  return @kind void;
+}
+procedure `void` `clickOnButton3`(`de.ecspride.Button2` v4 @kind this, `android.view.View` v5 @kind object @name `view`) @signature `Lde/ecspride/Button2;.clickOnButton3:(Landroid/view/View;)V` @AccessFlag PUBLIC {
+    temp;
+    v0;
+    v1;
+    v2;
+    v3;
+
+  #L0271e0.  v1:= "phone" @kind object;
+  #L0271e4.  call temp:= `getSystemService`(v4, v1) @signature `Lde/ecspride/Button2;.getSystemService:(Ljava/lang/String;)Ljava/lang/Object;` @kind virtual;
+  #L0271ea.  v0:= temp @kind object;
+  #L0271ec.  v0:= (`android.telephony.TelephonyManager`) v0 @kind object;
+  #L0271f0.  call temp:= `getDeviceId`(v0) @signature `Landroid/telephony/TelephonyManager;.getDeviceId:()Ljava/lang/String;` @kind virtual;
+  #L0271f6.  v1:= temp @kind object;
+  #L0271f8.  v4.`de.ecspride.Button2.imei` @type ^`java.lang.String` := v1 @kind object;
+  #L0271fc.  v1:= "TAG" @kind object;
+  #L027200.  v2:= new `java.lang.StringBuilder`;
+  #L027204.  v3:= "Button3: " @kind object;
+  #L027208.  call `<init>`(v2, v3) @signature `Ljava/lang/StringBuilder;.<init>:(Ljava/lang/String;)V` @kind direct;
+  #L02720e.  v3:= v4.`de.ecspride.Button2.imei` @type ^`java.lang.String` @kind object;
+  #L027212.  call temp:= `append`(v2, v3) @signature `Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;` @kind virtual;
+  #L027218.  v2:= temp @kind object;
+  #L02721a.  call temp:= `toString`(v2) @signature `Ljava/lang/StringBuilder;.toString:()Ljava/lang/String;` @kind virtual;
+  #L027220.  v2:= temp @kind object;
+  #L027222.  call temp:= `i`(v1, v2) @signature `Landroid/util/Log;.i:(Ljava/lang/String;Ljava/lang/String;)I` @kind static;
+  #L027228.  return @kind void;
+}
+procedure `void` `onCreate`(`de.ecspride.Button2` v3 @kind this, `android.os.Bundle` v4 @kind object @name `savedInstanceState`) @signature `Lde/ecspride/Button2;.onCreate:(Landroid/os/Bundle;)V` @AccessFlag PROTECTED {
+    temp;
+    v0;
+    v1;
+    v2;
+
+  #L02723c.  call `onCreate`(v3, v4) @signature `Landroid/app/Activity;.onCreate:(Landroid/os/Bundle;)V` @kind super;
+  #L027242.  v2:= 2130903040I;
+  #L027246.  call `setContentView`(v3, v2) @signature `Lde/ecspride/Button2;.setContentView:(I)V` @kind virtual;
+  #L02724c.  v2:= 2131165184I;
+  #L027250.  call temp:= `findViewById`(v3, v2) @signature `Lde/ecspride/Button2;.findViewById:(I)Landroid/view/View;` @kind virtual;
+  #L027256.  v0:= temp @kind object;
+  #L027258.  v0:= (`android.widget.Button`) v0 @kind object;
+  #L02725c.  v2:= new `de.ecspride.Button2$1`;
+  #L027260.  call `<init>`(v2, v3) @signature `Lde/ecspride/Button2$1;.<init>:(Lde/ecspride/Button2;)V` @kind direct;
+  #L027266.  call `setOnClickListener`(v0, v2) @signature `Landroid/widget/Button;.setOnClickListener:(Landroid/view/View$OnClickListener;)V` @kind virtual;
+  #L02726c.  v2:= 2131165185I;
+  #L027272.  call temp:= `findViewById`(v3, v2) @signature `Lde/ecspride/Button2;.findViewById:(I)Landroid/view/View;` @kind virtual;
+  #L027278.  v1:= temp @kind object;
+  #L02727a.  v1:= (`android.widget.Button`) v1 @kind object;
+  #L02727e.  v2:= new `de.ecspride.Button2$2`;
+  #L027282.  call `<init>`(v2, v3) @signature `Lde/ecspride/Button2$2;.<init>:(Lde/ecspride/Button2;)V` @kind direct;
+  #L027288.  call `setOnClickListener`(v1, v2) @signature `Landroid/widget/Button;.setOnClickListener:(Landroid/view/View$OnClickListener;)V` @kind virtual;
+  #L02728e.  return @kind void;
+}

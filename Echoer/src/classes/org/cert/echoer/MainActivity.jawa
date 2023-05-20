@@ -1,0 +1,91 @@
+record `org.cert.echoer.MainActivity` @kind class @AccessFlag PUBLIC extends `android.app.Activity` @kind class {
+  `android.content.Intent` `org.cert.echoer.MainActivity.i` @AccessFlag ;
+}
+procedure `void` `<init>`(`org.cert.echoer.MainActivity` v0 @kind this) @signature `Lorg/cert/echoer/MainActivity;.<init>:()V` @AccessFlag PUBLIC_CONSTRUCTOR {
+    temp;
+
+  #L03f124.  call `<init>`(v0) @signature `Landroid/app/Activity;.<init>:()V` @kind direct;
+  #L03f12a.  return @kind void;
+}
+procedure `void` `getDataFromIntent`(`org.cert.echoer.MainActivity` v6 @kind this) @signature `Lorg/cert/echoer/MainActivity;.getDataFromIntent:()V` @AccessFlag PRIVATE {
+    temp;
+    v0;
+    v1;
+    v2;
+    v3;
+    v4;
+    v5;
+
+  #L03f13c.  call temp:= `getIntent`(v6) @signature `Lorg/cert/echoer/MainActivity;.getIntent:()Landroid/content/Intent;` @kind virtual;
+  #L03f142.  v4:= temp @kind object;
+  #L03f144.  v6.`org.cert.echoer.MainActivity.i` @type ^`android.content.Intent` := v4 @kind object;
+  #L03f148.  v4:= v6.`org.cert.echoer.MainActivity.i` @type ^`android.content.Intent` @kind object;
+  #L03f14c.  call temp:= `getAction`(v4) @signature `Landroid/content/Intent;.getAction:()Ljava/lang/String;` @kind virtual;
+  #L03f152.  v0:= temp @kind object;
+  #L03f154.  v4:= "android.intent.action.SEND" @kind object;
+  #L03f158.  call temp:= `equals`(v0, v4) @signature `Ljava/lang/String;.equals:(Ljava/lang/Object;)Z` @kind virtual;
+  #L03f15e.  v4:= temp;
+  #L03f160.  if v4 == 0 then goto L03f188;
+  #L03f164.  v4:= v6.`org.cert.echoer.MainActivity.i` @type ^`android.content.Intent` @kind object;
+  #L03f168.  call temp:= `getExtras`(v4) @signature `Landroid/content/Intent;.getExtras:()Landroid/os/Bundle;` @kind virtual;
+  #L03f16e.  v2:= temp @kind object;
+  #L03f170.  v4:= "Data recieved in Echoer: " @kind object;
+  #L03f174.  v5:= "secret" @kind object;
+  #L03f178.  call temp:= `getString`(v2, v5) @signature `Landroid/os/Bundle;.getString:(Ljava/lang/String;)Ljava/lang/String;` @kind virtual;
+  #L03f17e.  v5:= temp @kind object;
+  #L03f180.  call temp:= `i`(v4, v5) @signature `Landroid/util/Log;.i:(Ljava/lang/String;Ljava/lang/String;)I` @kind static;
+  #L03f186.  return @kind void;
+  #L03f188.  v4:= "android.intent.action.VIEW" @kind object;
+  #L03f18c.  call temp:= `equals`(v0, v4) @signature `Ljava/lang/String;.equals:(Ljava/lang/Object;)Z` @kind virtual;
+  #L03f192.  v4:= temp;
+  #L03f194.  if v4 == 0 then goto L03f186;
+  #L03f198.  v4:= v6.`org.cert.echoer.MainActivity.i` @type ^`android.content.Intent` @kind object;
+  #L03f19c.  call temp:= `getData`(v4) @signature `Landroid/content/Intent;.getData:()Landroid/net/Uri;` @kind virtual;
+  #L03f1a2.  v3:= temp @kind object;
+  #L03f1a4.  v4:= "URI recieved in Echoer: " @kind object;
+  #L03f1a8.  call temp:= `toString`(v3) @signature `Landroid/net/Uri;.toString:()Ljava/lang/String;` @kind virtual;
+  #L03f1ae.  v5:= temp @kind object;
+  #L03f1b0.  call temp:= `i`(v4, v5) @signature `Landroid/util/Log;.i:(Ljava/lang/String;Ljava/lang/String;)I` @kind static;
+  #L03f1b6.  goto L03f186;
+  #L03f1b8.  v1:= Exception @type ^`java.lang.Exception` @kind object;
+  #L03f1ba.  call `printStackTrace`(v1) @signature `Ljava/lang/Exception;.printStackTrace:()V` @kind virtual;
+  #L03f1c0.  goto L03f186;
+  catch `java.lang.Exception` @[L03f13c..L03f1b6] goto L03f1b8;
+}
+procedure `void` `onCreate`(`org.cert.echoer.MainActivity` v2 @kind this, `android.os.Bundle` v3 @kind object @name `savedInstanceState`) @signature `Lorg/cert/echoer/MainActivity;.onCreate:(Landroid/os/Bundle;)V` @AccessFlag PROTECTED {
+    temp;
+    v0;
+    v1;
+
+  #L03f1e4.  call `onCreate`(v2, v3) @signature `Landroid/app/Activity;.onCreate:(Landroid/os/Bundle;)V` @kind super;
+  #L03f1ea.  v1:= 2130903040I;
+  #L03f1ee.  call `setContentView`(v2, v1) @signature `Lorg/cert/echoer/MainActivity;.setContentView:(I)V` @kind virtual;
+  #L03f1f4.  v1:= 2131230720I;
+  #L03f1f8.  call temp:= `findViewById`(v2, v1) @signature `Lorg/cert/echoer/MainActivity;.findViewById:(I)Landroid/view/View;` @kind virtual;
+  #L03f1fe.  v0:= temp @kind object;
+  #L03f200.  v0:= (`android.widget.Button`) v0 @kind object;
+  #L03f204.  v1:= new `org.cert.echoer.Button1Listener`;
+  #L03f208.  call `<init>`(v1, v2) @signature `Lorg/cert/echoer/Button1Listener;.<init>:(Lorg/cert/echoer/MainActivity;)V` @kind direct;
+  #L03f20e.  call `setOnClickListener`(v0, v1) @signature `Landroid/widget/Button;.setOnClickListener:(Landroid/view/View$OnClickListener;)V` @kind virtual;
+  #L03f214.  call `getDataFromIntent`(v2) @signature `Lorg/cert/echoer/MainActivity;.getDataFromIntent:()V` @kind direct;
+  #L03f21a.  return @kind void;
+}
+procedure `boolean` `onCreateOptionsMenu`(`org.cert.echoer.MainActivity` v2 @kind this, `android.view.Menu` v3 @kind object @name `menu`) @signature `Lorg/cert/echoer/MainActivity;.onCreateOptionsMenu:(Landroid/view/Menu;)Z` @AccessFlag PUBLIC {
+    temp;
+    v0;
+    v1;
+
+  #L03f22c.  call temp:= `getMenuInflater`(v2) @signature `Lorg/cert/echoer/MainActivity;.getMenuInflater:()Landroid/view/MenuInflater;` @kind virtual;
+  #L03f232.  v0:= temp @kind object;
+  #L03f234.  v1:= 2131165184I;
+  #L03f238.  call `inflate`(v0, v1, v3) @signature `Landroid/view/MenuInflater;.inflate:(ILandroid/view/Menu;)V` @kind virtual;
+  #L03f23e.  v0:= 1I;
+  #L03f240.  return v0;
+}
+procedure `void` `onResume`(`org.cert.echoer.MainActivity` v0 @kind this) @signature `Lorg/cert/echoer/MainActivity;.onResume:()V` @AccessFlag PROTECTED {
+    temp;
+
+  #L03f254.  call `onResume`(v0) @signature `Landroid/app/Activity;.onResume:()V` @kind super;
+  #L03f25a.  call `getDataFromIntent`(v0) @signature `Lorg/cert/echoer/MainActivity;.getDataFromIntent:()V` @kind direct;
+  #L03f260.  return @kind void;
+}

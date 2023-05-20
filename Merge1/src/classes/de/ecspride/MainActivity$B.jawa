@@ -1,0 +1,11 @@
+record `de.ecspride.MainActivity$B` @kind class @AccessFlag PUBLIC {
+  `de.ecspride.MainActivity$A` `de.ecspride.MainActivity$B.attr` @AccessFlag PUBLIC;
+  `de.ecspride.MainActivity` `de.ecspride.MainActivity$B.this$0` @AccessFlag FINAL_SYNTHETIC;
+}
+procedure `void` `<init>`(`de.ecspride.MainActivity$B` v0 @kind this, `de.ecspride.MainActivity` v1 @kind object) @signature `Lde/ecspride/MainActivity$B;.<init>:(Lde/ecspride/MainActivity;)V` @AccessFlag PUBLIC_CONSTRUCTOR {
+    temp;
+
+  #L071c80.  v0.`de.ecspride.MainActivity$B.this$0` @type ^`de.ecspride.MainActivity` := v1 @kind object;
+  #L071c84.  call `<init>`(v0) @signature `Ljava/lang/Object;.<init>:()V` @kind direct;
+  #L071c8a.  return @kind void;
+}

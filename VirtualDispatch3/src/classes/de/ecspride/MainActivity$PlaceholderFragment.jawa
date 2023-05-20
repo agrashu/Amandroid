@@ -1,0 +1,20 @@
+record `de.ecspride.MainActivity$PlaceholderFragment` @kind class @AccessFlag PUBLIC extends `android.support.v4.app.Fragment` @kind class {
+}
+procedure `void` `<init>`(`de.ecspride.MainActivity$PlaceholderFragment` v0 @kind this) @signature `Lde/ecspride/MainActivity$PlaceholderFragment;.<init>:()V` @AccessFlag PUBLIC_CONSTRUCTOR {
+    temp;
+
+  #L092c00.  call `<init>`(v0) @signature `Landroid/support/v4/app/Fragment;.<init>:()V` @kind direct;
+  #L092c06.  return @kind void;
+}
+procedure `android.view.View` `onCreateView`(`de.ecspride.MainActivity$PlaceholderFragment` v3 @kind this, `android.view.LayoutInflater` v4 @kind object @name `inflater`, `android.view.ViewGroup` v5 @kind object @name `container`, `android.os.Bundle` v6 @kind object @name `savedInstanceState`) @signature `Lde/ecspride/MainActivity$PlaceholderFragment;.onCreateView:(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;` @AccessFlag PUBLIC {
+    temp;
+    v0;
+    v1;
+    v2;
+
+  #L092c18.  v1:= 2130903065I;
+  #L092c1e.  v2:= 0I;
+  #L092c20.  call temp:= `inflate`(v4, v1, v5, v2) @signature `Landroid/view/LayoutInflater;.inflate:(ILandroid/view/ViewGroup;Z)Landroid/view/View;` @kind virtual;
+  #L092c26.  v0:= temp @kind object;
+  #L092c28.  return v0 @kind object;
+}

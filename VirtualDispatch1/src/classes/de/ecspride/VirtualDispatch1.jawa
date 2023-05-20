@@ -1,0 +1,52 @@
+record `de.ecspride.VirtualDispatch1` @kind class @AccessFlag PUBLIC extends `android.app.Activity` @kind class {
+  `int` `de.ecspride.VirtualDispatch1.counter` @AccessFlag PRIVATE;
+  `java.lang.String` `de.ecspride.VirtualDispatch1.imei` @AccessFlag PRIVATE;
+}
+procedure `void` `<init>`(`de.ecspride.VirtualDispatch1` v1 @kind this) @signature `Lde/ecspride/VirtualDispatch1;.<init>:()V` @AccessFlag PUBLIC_CONSTRUCTOR {
+    temp;
+    v0;
+
+  #L027034.  call `<init>`(v1) @signature `Landroid/app/Activity;.<init>:()V` @kind direct;
+  #L02703a.  v0:= 0I;
+  #L02703c.  v1.`de.ecspride.VirtualDispatch1.counter` @type ^`int` := v0;
+  #L027040.  return @kind void;
+}
+procedure `void` `clickButton`(`de.ecspride.VirtualDispatch1` v2 @kind this, `android.view.View` v3 @kind object @name `view`) @signature `Lde/ecspride/VirtualDispatch1;.clickButton:(Landroid/view/View;)V` @AccessFlag PUBLIC {
+    temp;
+    v0;
+    v1;
+
+  #L027054.  v1:= v2.`de.ecspride.VirtualDispatch1.counter` @type ^`int`;
+  #L027058.  v1:= v1 + 1;
+  #L02705c.  v2.`de.ecspride.VirtualDispatch1.counter` @type ^`int` := v1;
+  #L027060.  v0:= 0I;
+  #L027062.  v1:= v2.`de.ecspride.VirtualDispatch1.counter` @type ^`int`;
+  #L027066.  v1:= v1 %% 2;
+  #L02706a.  if v1 != 0 then goto L027084;
+  #L02706e.  v0:= new `de.ecspride.NoDataLeak`;
+  #L027072.  v1:= "no leak" @kind object;
+  #L027076.  call `<init>`(v0, v1) @signature `Lde/ecspride/NoDataLeak;.<init>:(Ljava/lang/String;)V` @kind direct;
+  #L02707c.  call `logData`(v0) @signature `Lde/ecspride/NoDataLeak;.logData:()V` @kind virtual;
+  #L027082.  return @kind void;
+  #L027084.  v0:= new `de.ecspride.DataLeak`;
+  #L027088.  v1:= v2.`de.ecspride.VirtualDispatch1.imei` @type ^`java.lang.String` @kind object;
+  #L02708c.  call `<init>`(v0, v1) @signature `Lde/ecspride/DataLeak;.<init>:(Ljava/lang/String;)V` @kind direct;
+  #L027092.  goto L02707c;
+}
+procedure `void` `onCreate`(`de.ecspride.VirtualDispatch1` v2 @kind this, `android.os.Bundle` v3 @kind object @name `savedInstanceState`) @signature `Lde/ecspride/VirtualDispatch1;.onCreate:(Landroid/os/Bundle;)V` @AccessFlag PROTECTED {
+    temp;
+    v0;
+    v1;
+
+  #L0270a4.  call `onCreate`(v2, v3) @signature `Landroid/app/Activity;.onCreate:(Landroid/os/Bundle;)V` @kind super;
+  #L0270aa.  v1:= 2130903040I;
+  #L0270ae.  call `setContentView`(v2, v1) @signature `Lde/ecspride/VirtualDispatch1;.setContentView:(I)V` @kind virtual;
+  #L0270b4.  v1:= "phone" @kind object;
+  #L0270b8.  call temp:= `getSystemService`(v2, v1) @signature `Lde/ecspride/VirtualDispatch1;.getSystemService:(Ljava/lang/String;)Ljava/lang/Object;` @kind virtual;
+  #L0270be.  v0:= temp @kind object;
+  #L0270c0.  v0:= (`android.telephony.TelephonyManager`) v0 @kind object;
+  #L0270c4.  call temp:= `getDeviceId`(v0) @signature `Landroid/telephony/TelephonyManager;.getDeviceId:()Ljava/lang/String;` @kind virtual;
+  #L0270ca.  v1:= temp @kind object;
+  #L0270cc.  v2.`de.ecspride.VirtualDispatch1.imei` @type ^`java.lang.String` := v1 @kind object;
+  #L0270d0.  return @kind void;
+}

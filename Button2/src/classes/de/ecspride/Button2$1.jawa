@@ -1,0 +1,45 @@
+record `de.ecspride.Button2$1` @kind class @AccessFlag  extends `android.view.View$OnClickListener` @kind interface {
+  `de.ecspride.Button2` `de.ecspride.Button2$1.this$0` @AccessFlag FINAL_SYNTHETIC;
+}
+procedure `void` `<init>`(`de.ecspride.Button2$1` v0 @kind this, `de.ecspride.Button2` v1 @kind object) @signature `Lde/ecspride/Button2$1;.<init>:(Lde/ecspride/Button2;)V` @AccessFlag CONSTRUCTOR {
+    temp;
+
+  #L027090.  v0.`de.ecspride.Button2$1.this$0` @type ^`de.ecspride.Button2` := v1 @kind object;
+  #L027094.  call `<init>`(v0) @signature `Ljava/lang/Object;.<init>:()V` @kind direct;
+  #L02709a.  return @kind void;
+}
+procedure `void` `onClick`(`de.ecspride.Button2$1` v6 @kind this, `android.view.View` v7 @kind object @name `v`) @signature `Lde/ecspride/Button2$1;.onClick:(Landroid/view/View;)V` @AccessFlag PUBLIC {
+    temp;
+    v0;
+    v1;
+    v2;
+    v3;
+    v4;
+    v5;
+
+  #L0270ac.  v2:= 0I;
+  #L0270ae.  call temp:= `getDefault`() @signature `Landroid/telephony/SmsManager;.getDefault:()Landroid/telephony/SmsManager;` @kind static;
+  #L0270b4.  v0:= temp @kind object;
+  #L0270b6.  v1:= "+49 1234" @kind object;
+  #L0270ba.  v3:= v6.`de.ecspride.Button2$1.this$0` @type ^`de.ecspride.Button2` @kind object;
+  #L0270be.  call temp:= `access$0`(v3) @signature `Lde/ecspride/Button2;.access$0:(Lde/ecspride/Button2;)Ljava/lang/String;` @kind static;
+  #L0270c4.  v3:= temp @kind object;
+  #L0270c6.  v4:= v2 @kind object;
+  #L0270c8.  v5:= v2 @kind object;
+  #L0270ca.  call `sendTextMessage`(v0, v1, v2, v3, v4, v5) @signature `Landroid/telephony/SmsManager;.sendTextMessage:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V` @kind virtual;
+  #L0270d0.  v3:= "TAG" @kind object;
+  #L0270d4.  v4:= new `java.lang.StringBuilder`;
+  #L0270d8.  v5:= "sendIMEI: " @kind object;
+  #L0270dc.  call `<init>`(v4, v5) @signature `Ljava/lang/StringBuilder;.<init>:(Ljava/lang/String;)V` @kind direct;
+  #L0270e2.  v5:= v6.`de.ecspride.Button2$1.this$0` @type ^`de.ecspride.Button2` @kind object;
+  #L0270e6.  call temp:= `access$0`(v5) @signature `Lde/ecspride/Button2;.access$0:(Lde/ecspride/Button2;)Ljava/lang/String;` @kind static;
+  #L0270ec.  v5:= temp @kind object;
+  #L0270ee.  call temp:= `append`(v4, v5) @signature `Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;` @kind virtual;
+  #L0270f4.  v4:= temp @kind object;
+  #L0270f6.  call temp:= `toString`(v4) @signature `Ljava/lang/StringBuilder;.toString:()Ljava/lang/String;` @kind virtual;
+  #L0270fc.  v4:= temp @kind object;
+  #L0270fe.  call temp:= `i`(v3, v4) @signature `Landroid/util/Log;.i:(Ljava/lang/String;Ljava/lang/String;)I` @kind static;
+  #L027104.  v3:= v6.`de.ecspride.Button2$1.this$0` @type ^`de.ecspride.Button2` @kind object;
+  #L027108.  call `access$1`(v3, v2) @signature `Lde/ecspride/Button2;.access$1:(Lde/ecspride/Button2;Ljava/lang/String;)V` @kind static;
+  #L02710e.  return @kind void;
+}

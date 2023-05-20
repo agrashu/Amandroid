@@ -1,0 +1,19 @@
+Application Name: Echoer.apk
+Uses Permissions: 
+
+Component org.cert.echoer.MainActivity
+  Component type: activity
+  Exported: true
+  Dynamic Registered: false
+  Required Permission: 
+  IntentFilters:
+    IntentFilter:(Actions:["android.intent.action.SEND"],Categories:["android.intent.category.DEFAULT"],Data:[(MimeTypes:<"text/plain">)])
+
+  Inter-component communication (ICC) Result:
+
+
+
+Taint analysis result:
+  Sources found:
+  Sinks found:
+  Discovered taint paths are listed below:
